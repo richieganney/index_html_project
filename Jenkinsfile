@@ -28,6 +28,7 @@ cp release.txt build/release.txt'''
       steps {
         script {
           sh """ssh -tt richieganney@192.168.56.104 << EOF
+          whoami
           cp /home/richieganney/build/* /var/www/html
           rm -rf /home/richieganney/build
           rm -rf /home/richieganney/build.zip
