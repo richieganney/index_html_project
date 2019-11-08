@@ -27,13 +27,13 @@ cp release.txt build/release.txt'''
     stage('moving artifacts into the right folder'){
       steps {
         script {
-          sh 'ssh -tt richieganney@192.168.56.104 << EOF'
-          sh 'whoami'
-          sh 'cp /home/richieganney/build/* /var/www/html'
-          sh 'rm -rf /home/richieganney/build'
-          sh 'rm -rf /home/richieganney/build.zip'
-          sh 'exit'
-          sh 'EOF'
+          sh """ssh -tt richieganney@192.168.56.104 << EOF
+          whoami
+          cp /home/richieganney/build/* /var/www/html
+          rm -rf /home/richieganney/build
+          rm -rf /home/richieganney/build.zip
+          exit
+          EOF"""
         }
       }
     }
