@@ -27,7 +27,8 @@ cp release.txt build/release.txt'''
     stage('moving artifacts into the right folder'){
       steps {
         script {
-          sh """ssh richieganney@192.168.56.104 << EOF
+          sh """ssh -tt
+          ssh richieganney@192.168.56.104 << EOF
           cp /home/richieganney/build/* /var/www/html
           rm -rf /home/richieganney/build
           rm -rf /home/richieganney/build.zip
