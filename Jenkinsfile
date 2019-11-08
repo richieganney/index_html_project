@@ -36,3 +36,5 @@ cp release.txt build/release.txt'''
         }
       }
     }
+  }
+}
